@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mychat kaila</title>
+
+<style>
+.avatar{
+   width: 60px;
+   border-radius: 30px;
+
+}
+.msm1{
+    background-color: green;
+    color: white;
+    padding: 13px;
+    border-radius: 25px;
+    border-bottom-left-radius: 0px;
+    display: inline-block;
+    margin-left: 8px;
+}
+.usuario1{
+    display: flex;
+}
+.avatar2{
+    width: 60px;
+    border-radius: 30px;
+}
+.msm2{
+    background-color: brown;
+    color: white;
+    padding: 13px;
+    border-radius: 25px;
+    border-top-left-radius: 0px;
+    display: inline-block;
+    margin-bottom: 8px;
+    
+}
+.usuario2{
+    display: flex;
+    margin-left: 20%;
+    
+}
+
+</style>
+
+</head>
+
+
+
+<body>
+    <!--mensaje usuario1-->
+   
+
+
+    <!--mensaje de usuario2-->
+    
+
+<div id="contenedor">
+
+</div>
+<div style="display: flex;">
+    <div>
+        <input type="text" id="mensaje1">
+        <button onclick="msmusuario1()">enviar messaje</button>
+    </div>
+    
+    
+    <div> 
+        <input type="text" id="mensaje2">
+        <button onclick="msmusuario2()">enviar mensaje 2 </button>
+    </div>
+
+</div>
+
+
+
+<div id="contenedor2"></div>
+
+
+<script>
+var caja = document.getElementById("contenedor")
+
+
+console.log(caja.outerHTML)
+function msmusuario1(){
+    var contenidoactual = caja.outerHTML
+    var texto= document.getElementById("mensaje1").value
+   
+
+
+    caja.innerHTML=`${contenidoactual} <div class="usuario1">
+        <div>
+            <img class="avatar" src="https://images.vexels.com/media/users/3/141066/isolated/preview/2f9f642a85dc4a93ad4400b18c9f0e7e-avatar-cuadrado-rojo-empresario.png" alt="">
+        </div>
+
+        <div class="msm1">
+            <span>${texto}</span><br>
+            <span>09:25</span>
+        </div>
+
+    </div>`
+    document.getElementById("mensaje1").value=""
+}
+
+
+
+function msmusuario2(){
+    var contenidoactual = caja.outerHTML
+    var texto= document.getElementById("mensaje2").value
+   
+    caja.innerHTML=`${contenidoactual} <div class="usuario2">
+        <div>
+            <img class="avatar2" src="https://w7.pngwing.com/pngs/954/1000/png-transparent-square-silver-person-symbol-printed-silhouette-icon-avatar-default-silhouette-application-user.png" alt="">
+        </div>
+
+        <div class="msm2">
+            <span>${texto}</span><br>
+            <span>09:30</span>
+        </div>
+
+    </div>`
+    document.getElementById("mensaje2").value=""
+}
+
+</script>
+    
+</body>
+</html>
